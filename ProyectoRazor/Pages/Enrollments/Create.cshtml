@@ -26,8 +26,8 @@
                 <span asp-validation-for="Enrollment.CourseId" class="text-danger"></span>
             </div>
             <div class="mb-3">
-                <label asp-for="Enrollment.Grade" class="form-label">Calificación</label>
-                <input asp-for="Enrollment.Grade" class="form-control" />
+                <label asp-for="Enrollment.Grade" class="form-label">Calificación (ej: A, B, C)</label>
+                <input asp-for="Enrollment.Grade" class="form-control" placeholder="A, B, C, etc." maxlength="2" />
                 <span asp-validation-for="Enrollment.Grade" class="text-danger"></span>
             </div>
             <button type="submit" class="btn btn-primary">Guardar</button>
