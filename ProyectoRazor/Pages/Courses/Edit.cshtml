@@ -1,0 +1,35 @@
+@page
+@model ProyectoRazor.Pages.Courses.EditModel
+
+@{
+    ViewData["Title"] = "Editar Curso";
+}
+
+<h1>Editar Curso</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <input type="hidden" asp-for="Course.Id" />
+            <div class="mb-3">
+                <label asp-for="Course.Title" class="form-label"></label>
+                <input asp-for="Course.Title" class="form-control" />
+                <span asp-validation-for="Course.Title" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="Course.Credits" class="form-label"></label>
+                <input asp-for="Course.Credits" class="form-control" />
+                <span asp-validation-for="Course.Credits" class="text-danger"></span>
+            </div>
+            <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+            <a asp-page="Index" class="btn btn-secondary">Cancelar</a>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

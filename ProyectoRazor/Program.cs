@@ -1,7 +1,13 @@
+using Microsoft.EntityFrameworkCore;
+using ProyectoRazor.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+builder.Services.AddDbContext<UniversityContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("UniversityContext")));
+
 
 var app = builder.Build();
 
